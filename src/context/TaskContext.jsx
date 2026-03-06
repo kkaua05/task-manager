@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import React, { createContext, useState, useEffect } from 'react';
 
 export const TaskContext = createContext();
@@ -15,7 +16,7 @@ export const TaskProvider = ({ children }) => {
     }
     return [];
   });
-  
+
   const [filter, setFilter] = useState('all');
   const [search, setSearch] = useState('');
 
