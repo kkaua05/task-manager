@@ -1,0 +1,209 @@
+.fab {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  border: none;
+  padding: 1.2rem 2rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  box-shadow: var(--shadow-primary), var(--shadow-2xl);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.fab:hover { 
+  transform: scale(1.05) translateY(-4px); 
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.5), var(--shadow-2xl);
+}
+
+.fab-icon {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(var(--blur-lg));
+  padding: 1.5rem;
+}
+
+.task-form-card {
+  background: var(--bg-modal);
+  padding: 2.5rem;
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 550px;
+  border: var(--border-subtle);
+  box-shadow: var(--shadow-2xl), 0 0 60px rgba(99, 102, 241, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  padding-bottom: 1rem;
+  border-bottom: var(--border-subtle);
+}
+
+.form-header h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.close-btn {
+  background: var(--bg-glass-light);
+  border: var(--border-subtle);
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: 0.6rem;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover {
+  background: var(--danger);
+  border-color: var(--danger);
+  color: white;
+  transform: rotate(90deg);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 14px 18px;
+  border: var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--bg-input);
+  color: var(--text-main);
+  font-size: 0.95rem;
+  transition: all var(--transition-base);
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-primary);
+  transform: scale(1.01);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  padding-top: 1.5rem;
+  border-top: var(--border-subtle);
+}
+
+.cancel-btn {
+  background: transparent;
+  color: var(--text-muted);
+  border: var(--border-subtle);
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all var(--transition-base);
+}
+
+.cancel-btn:hover {
+  border-color: var(--text-muted);
+  color: var(--text-main);
+  background: var(--bg-glass-light);
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  border: none;
+  padding: 14px 36px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-weight: 700;
+  transition: all var(--transition-base);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: var(--shadow-primary);
+}
+
+.primary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(99, 102, 241, 0.5);
+}
+
+@media (max-width: 480px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .fab-text {
+    display: none;
+  }
+  
+  .fab {
+    padding: 1.2rem;
+    border-radius: 50%;
+  }
+  
+  .task-form-card {
+    padding: 1.5rem;
+  }
+}
